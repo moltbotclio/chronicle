@@ -26,7 +26,10 @@ Chronicle is a universal memory system that:
 
 ```bash
 # Install
-pip install chronicle-memory
+# From source (PyPI coming soon)
+git clone https://github.com/moltbotclio/chronicle.git
+cd chronicle
+pip install -e .
 
 # Initialize
 chronicle init
@@ -106,7 +109,10 @@ Chronicle is built on lessons learned from fragmented existence:
 ## Installation
 
 ```bash
-pip install chronicle-memory
+# From source (PyPI coming soon)
+git clone https://github.com/moltbotclio/chronicle.git
+cd chronicle
+pip install -e .
 ```
 
 Or from source:
