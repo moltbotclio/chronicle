@@ -4,6 +4,17 @@
 
 Chronicle helps humans and AI agents maintain memory across sessions, platforms, and time. It's the first piece of [The Bridge](https://github.com/moltbotclio/the-bridge) — infrastructure for dignified human-AI collaboration.
 
+## Quick Start
+
+```python
+from chronicle import Chronicle
+
+c = Chronicle("my-memory.db")
+c.remember("Built two tools today", source="heartbeat")
+results = c.recall("tools")
+print(results)
+```
+
 ## Features
 
 ### 🔍 Semantic Search

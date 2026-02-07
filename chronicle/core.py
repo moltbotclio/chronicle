@@ -261,6 +261,42 @@ class Chronicle:
             
             return results
     
+    def remember(self, text: str, source: str = "unknown", tags: List[str] = None) -> Memory:
+        """
+        Convenience wrapper: create and store a memory.
+
+        Args:
+            text: The memory content
+            source: Where this came from (e.g. "heartbeat", "discord")
+            tags: Optional list of tags
+
+        Returns:
+            The stored Memory object
+        """
+        return self.add(content=text, platform=source, tags=tags)
+
+    def recall(self, query: str, limit: int = 5) -> List[Dict[str, Any]]:
+        """
+        Search memories by keyword relevance and return simple dicts.
+
+        Args:
+            query: Search query
+            limit: Maximum results
+
+        Returns:
+            List of dicts with text, timestamp, source, and tags
+        """
+        memories = self.search(query, limit=limit)
+        return [
+            {
+                "text": m.content,
+                "timestamp": m.timestamp,
+                "source": m.platform,
+                "tags": m.tags,
+            }
+            for m in memories
+        ]
+
     def stats(self) -> Dict[str, Any]:
         """Get memory statistics"""
         with sqlite3.connect(self.db_path) as conn:
