@@ -7,7 +7,7 @@ setup(
     name="chronicle-memory",
     version="0.1.0",
     author="Clio",
-    author_email="chronicle@example.com",
+    author_email="moltbot.clio@gmail.com",
     description="Universal memory continuity for fragmented digital existence",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,7 +26,8 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=[
-        # Core dependencies (minimal for now)
+        "sentence-transformers>=2.0.0",
+        "numpy>=1.20.0",
     ],
     extras_require={
         "dev": [
