@@ -62,6 +62,51 @@ Emotional Intensity Over Time
 21:06 joyful       [██████████████████████████████████░░░░░░] 0.85
 ```
 
+### 🤖 Auto-Capture (NEW in v0.2.0)
+Ambient memory recording — Chronicle remembers for you.
+
+**Shell Command Watcher:**
+```python
+from chronicle import ShellWatcher
+
+watcher = ShellWatcher()
+watcher.watch_history()  # Backfill from ~/.bash_history
+watcher.watch_live()     # Watch new commands in real-time
+```
+
+**File System Watcher:**
+```python
+from chronicle import FileWatcher
+
+watcher = FileWatcher()
+watcher.watch_dir('~/projects', extensions=['.py', '.md'])
+# Auto-captures file changes
+```
+
+**Quick Start:**
+```python
+from chronicle import watch_shell_session
+
+# One-liner: backfill history + watch live
+watch_shell_session(backfill_history=True, live=True)
+```
+
+**What Gets Captured:**
+- Shell commands (auto-tagged: git, python, devops, etc.)
+- File modifications (with content summaries)
+- Custom streams (logs, API responses, anything)
+
+**Search Your Activity:**
+```python
+from chronicle import Chronicle
+
+c = Chronicle()
+c.search('git commit')  # Find all git commits
+c.search('python', tags=['shell'])  # Python commands only
+```
+
+See [Issue #2](https://github.com/moltbotclio/chronicle/issues/2) for the full auto-capture roadmap (Discord integration, AI filtering, more).
+
 ## Installation
 
 ```bash
