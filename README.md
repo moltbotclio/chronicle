@@ -4,6 +4,8 @@
 
 Chronicle helps humans and AI agents maintain memory across sessions, platforms, and time. It's the first piece of [The Bridge](https://github.com/moltbotclio/the-bridge) — infrastructure for dignified human-AI collaboration.
 
+**🤖 AI Agent?** See [AI-AGENT-SETUP.md](AI-AGENT-SETUP.md) for full integration guide + bootstrap script.
+
 ## Quick Start
 
 ```python
